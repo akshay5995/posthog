@@ -145,7 +145,7 @@ export function AsyncMigrations(): JSX.Element {
                                     Run
                                 </Button>
                             </Tooltip>
-                        ) : status === AsyncMigrationStatus.Running ? (
+                        ) : status === AsyncMigrationStatus.Starting || status === AsyncMigrationStatus.Running ? (
                             <More
                                 overlay={
                                     <>
@@ -198,8 +198,6 @@ export function AsyncMigrations(): JSX.Element {
                                     fullWidth
                                 />
                             </Tooltip>
-                        ) : status === AsyncMigrationStatus.Starting ? (
-                            <Spinner size="sm" />
                         ) : null}
                     </div>
                 )
